@@ -18,7 +18,7 @@ public:
   FSScene();
   virtual ~FSScene();
 
-  void Init( uint64_t random_seed );
+  void Init( uint64_t random_seed , uint64_t max_frame );
   void Release();
 
   void Begin();
@@ -36,15 +36,16 @@ private:
 
   void UpdateFrame();
 
-
   virtual void OnBegin() {};
   virtual void OnEnd() {};
 
   uint64_t cur_frame_;
 
+  uint64_t max_frame_;
+
   std::map<uint64_t, FSEntity*> entities_;
   std::map<uint64_t,std::list<FSCommand*>> commands_;
 
 
-  FSRandom random_;
+  Common::Random random_;
 };

@@ -1,4 +1,6 @@
-int main()
+#include "fsscene.h"
+
+int main(int argn, char** argz)
 {
-  return 0;
+
 }

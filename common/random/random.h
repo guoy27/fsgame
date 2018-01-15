@@ -5,21 +5,26 @@
 //************************************************************************
 #pragma once
 #include <list>
-class FSRandom
+
+namespace Common
 {
-public:
-  FSRandom(uint64_t random_seed);
-  FSRandom();
-  virtual ~FSRandom();
+  class Random
+  {
+  public:
+    Random(uint64_t random_seed);
+    Random();
+    virtual ~Random();
 
-  void SetSeed(uint64_t random_seed);
+    void SetSeed(uint64_t random_seed);
 
-  virtual void Init();
-  virtual void Release();
+    virtual void Init();
+    virtual void Release();
 
-  uint64_t GetRandomValue();
+    uint64_t GetRandomValue();
 
-private:
-  uint64_t random_seed_;
-  uint64_t rand_times_;
-};
+  private:
+    uint64_t random_seed_;
+    uint64_t rand_times_;
+  };
+
+}

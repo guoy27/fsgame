@@ -6,23 +6,27 @@
 #pragma once
 #include <mutex>
 
-class LogHandler
+namespace Common
 {
-public:
-  LogHandler();
-  ~LogHandler();
+  class Log
+  {
+  public:
+    Log();
+    ~Log();
 
-  void LogInfo(const char* srcfile, int srcline, const char* fmt, ...);
+    void LogInfo(const char* srcfile, int srcline, const char* fmt, ...);
 
-  static LogHandler sLogHandler;
-protected:
+    static Log sLogHandler;
+  protected:
 
-private:
+  private:
 
-  std::mutex log_mutex_;
+    std::mutex log_mutex_;
 
-  char*      sbuffer_;
-};
+    char*      sbuffer_;
+  };
 
 #define LOG(fmt, ...) \
   sLogHandler.LogInfo(__FILE__, __LINE__, fmt, __VA_ARGS__)
+}
+

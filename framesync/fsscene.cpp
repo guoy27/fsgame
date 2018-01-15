@@ -15,7 +15,7 @@ FSScene::~FSScene()
 
 void FSScene::Init(uint64_t random_seed)
 {
-
+  random_.SetSeed(random_seed);
 }
 
 void FSScene::Release()
