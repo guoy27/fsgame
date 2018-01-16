@@ -1,8 +1,8 @@
 set(framesync_files
+  ${SOURCE_DIR}/framesync/fsworld.h
+  ${SOURCE_DIR}/framesync/fsworld.cpp
   ${SOURCE_DIR}/framesync/fsscene.h
   ${SOURCE_DIR}/framesync/fsscene.cpp
-  ${SOURCE_DIR}/framesync/fsmove_command.h
-  ${SOURCE_DIR}/framesync/fsmove_command.cpp
   ${SOURCE_DIR}/framesync/fsentity.h
   ${SOURCE_DIR}/framesync/fsentity.cpp
   ${SOURCE_DIR}/framesync/fscommand.h

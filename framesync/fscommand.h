@@ -1,21 +1,20 @@
 //************************************************************************
 // author:  guoyong@skyunion.net
-// created: 2017/11/23
+// created: 2018/01/16
 // desc:    
 //************************************************************************
 #pragma once
 
-class FSScene;
+class FSEntity;
+class FSWorld;
 class FSCommand
 {
 public:
-  FSCommand() {}
-  virtual ~FSCommand() {}
+  FSCommand(FSWorld* world);
+  virtual ~FSCommand();
 
-  virtual void Init() {};
-  virtual void Release() {};
+  void DoCommand();
 
-  virtual void HandleCommand(FSScene* scene) = 0;
-private:
+  virtual void OnHandleEntity(FSEntity* entity);
 
 };
